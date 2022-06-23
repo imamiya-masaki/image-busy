@@ -1,0 +1,9 @@
+{
+  "name": "seeds",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "dummy-json": "^3.0.5"
+  }
+}

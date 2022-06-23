@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "bundledDependencies": [
+    "radix3",
+    "unstorage",
+    "ohash",
+    "pathe",
+    "unenv",
+    "destr",
+    "source-map-support",
+    "ohmyfetch",
+    "h3",
+    "node-fetch-native",
+    "hookable",
+    "@prisma/client",
+    "ufo",
+    "scule",
+    "cookie-es",
+    ".prisma",
+    "source-map",
+    "buffer-from"
+  ]
+}
