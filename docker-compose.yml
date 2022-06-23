@@ -17,8 +17,7 @@ services:
       - ./origin:/image-list
     environment:
       DATABASE_URL: ${DATABASE_URL}
-      HOST: 0.0.0.0
-    working_dir:  '/image-list'
+    working_dir:  /image-list
     command:
       node server/index.mjs
     ports:
