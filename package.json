@@ -46,5 +46,6 @@
   "prisma": {
     "seed": "node --experimental-json-modules --loader ts-node/esm prisma/seed.ts"
   },
-  "type": "module"
+  "type": "module",
+  {"engine": "16.14.2"}
 }
