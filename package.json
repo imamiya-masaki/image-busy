@@ -7,7 +7,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "analyze": "nuxi analyze",
-    "start": "nuxt start",
+    "start": "node .output/server/index.mjs",
     "heroku-postbuild": "npm run build",
     "prisma:migragte": "npx prisma migrate reset && npx prisma migrate dev",
     "prisma:push": "npx prisma db push",
