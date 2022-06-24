@@ -1,12 +1,12 @@
 {
   "private": true,
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev -p 8080",
+    "build": "npx nuxt build",
+    "dev": "npx nuxt dev -p 8080",
     "bench": "node bench.js",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "analyze": "nuxi analyze",
+    "generate": "npx nuxt generate",
+    "preview": "npx nuxt preview",
+    "analyze": "npx nuxi analyze",
     "start": "node .output/server/index.mjs",
     "heroku-postbuild": "npm run build",
     "prisma:migragte": "npx prisma migrate reset && npx prisma migrate dev",
