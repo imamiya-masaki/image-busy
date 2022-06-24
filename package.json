@@ -7,7 +7,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "analyze": "nuxi analyze",
-    "start": " nuxi start",
+    "start": " nuxt start",
     "prisma:migragte": "npx prisma migrate reset && npx prisma migrate dev",
     "prisma:push": "npx prisma db push",
     "prisma:seed": "npx prisma migrate reset",
