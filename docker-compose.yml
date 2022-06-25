@@ -21,4 +21,4 @@ services:
     command:
       node server/index.mjs
     ports:
-      - 8888:8888
+      - 3000:3000

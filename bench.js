@@ -23,7 +23,7 @@ async function main() {
   console.log('start');
   const port = 8080;
   const localhost = 'localhost:8080';
-  const originApp = '0.0.0.0:8888';
+  const originApp = '0.0.0.0:3000';
   let resultScore = 0;
   for (const route of ['', '1243', '1']) {
     resultScore += await lightHouse(`http://${localhost}/${route}`)
