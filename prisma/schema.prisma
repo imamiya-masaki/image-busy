@@ -1,0 +1,29 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  // heroku
+  shadowDatabaseUrl = env("DATABASE_URL")
+}
+
+model Post {
+  id        Int      @default(autoincrement()) @id
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  title     String   @db.VarChar(255)
+  image Image[]
+}
+
+model Image {
+  postId Int
+  id     Int
+  uri  String
+  Post Post? @relation(fields: [postId], references: [id])
+  @@id([postId, id])
+}
