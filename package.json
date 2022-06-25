@@ -8,7 +8,7 @@
     "preview": "npx nuxt preview",
     "analyze": "npx nuxi analyze",
     "start": "node .output/server/index.mjs",
-    "heroku-postbuild": "node_modules/nuxt/bin/nuxt.mjs build",
+    "heroku-postbuild": "npx nuxt build",
     "prisma:migragte": "npx prisma migrate reset && npx prisma migrate dev",
     "prisma:push": "npx prisma db push",
     "prisma:seed": "npx prisma migrate reset",
