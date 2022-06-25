@@ -9,7 +9,7 @@
     "analyze": "nuxi analyze",
     "start": "node --optimize_for_size --max_old_space_size=460 .output/server/index.mjs",
     "heroku-postbuild": "nuxt build",
-    "heroku-cleanup": "npx prisma generate && npx prisma migrate dev --name init" ,
+    "heroku-cleanup": "npx prisma generate && npx prisma migrate reset" ,
     "prisma:migragte": "npx prisma migrate reset && npx prisma migrate dev",
     "prisma:push": "npx prisma db push",
     "prisma:seed": "npx prisma migrate reset",
@@ -46,7 +46,7 @@
     "vue": "^3.2.37"
   },
   "prisma": {
-    "seed": "node --optimize_for_size --max_old_space_size=460 --experimental-json-modules --loader ts-node/esm prisma/seed.ts"
+    "seed": "node --experimental-json-modules --loader ts-node/esm prisma/seed.ts"
   },
   "engines": {
     "node": "16.14.x",
