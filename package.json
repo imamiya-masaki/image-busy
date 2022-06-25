@@ -9,7 +9,7 @@
     "analyze": "nuxi analyze",
     "start": "node --optimize_for_size --max_old_space_size=460 .output/server/index.mjs",
     "heroku-postbuild": "nuxt build",
-    "heroku-cleanup": "npx prisma generate && npx prisma migrate reset" ,
+    "heroku-cleanup": "npx prisma generate",
     "prisma:migragte": "npx prisma migrate reset && npx prisma migrate dev",
     "prisma:push": "npx prisma db push",
     "prisma:seed": "npx prisma migrate reset",

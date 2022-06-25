@@ -34,12 +34,12 @@ Image {
 
 */
 const taslTemplete = `[
-  {{#repeat 5000}}
+  {{#repeat 250}}
   {
   "id": {{ add @index 1}},
   "title": "{{lorem min=1 max= 2}}",
   "images": [
-   {{#repeat min=1 max=100 }}
+   {{#repeat min=1 max=50 }}
    "{{random ${myMockData.image.map(a => '\'' + a + '\'').join(' ')}}}"
    {{/repeat}}
   ],
