@@ -7,7 +7,7 @@
     "generate": "npx nuxt generate",
     "preview": "npx nuxt preview",
     "analyze": "npx nuxi analyze",
-    "start": "node --optimize_for_size --max_old_space_size=460 dist/main.js",
+    "start": "node dist/main.js",
     "heroku-postbuild": "nuxt build",
     "prisma:migragte": "npx prisma migrate reset && npx prisma migrate dev",
     "prisma:push": "npx prisma db push",
