@@ -33,6 +33,14 @@ herokuでのデプロイですので、一度こちらにアクセスしとい�
 
 ※[dyno のスリープ](https://devcenter.heroku.com/ja/articles/free-dyno-hours#dyno-sleeping)
 
+next: 
+
+```
+touch .env
+echo DATABASE_URL=\"postgresql://postgres:password@localhost:5432/postgres?schema=public\" >> .env
+
+```
+
 ## データベース起動
 
 
@@ -45,7 +53,7 @@ herokuでのデプロイですので、一度こちらにアクセスしとい�
 ### バックグラウンドで実行
 
 ```
-docker-compose up　-d
+docker-compose up -d
 ```
 
 ## prismaの初期立ち上げallinoneコード
