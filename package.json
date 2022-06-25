@@ -12,9 +12,9 @@
     "heroku-cleanup": "npx prisma generate",
     "prisma:migragte": "npx prisma migrate reset && npx prisma migrate dev",
     "prisma:push": "npx prisma db push",
-    "prisma:seed": "npx prisma migrate reset",
+    "prisma:seed": "yes | npx prisma migrate reset",
     "prisma:init": "npx prisma init",
-    "prisma:mps": "npx prisma migrate dev && npx prisma db push && npx prisma migrate reset"
+    "prisma:start": "npx prisma generate && npx prisma db push && yes | npx prisma migrate reset"
   },
   "devDependencies": {
     "@babel/core": "^7.18.2",

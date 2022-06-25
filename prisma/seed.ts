@@ -13,7 +13,9 @@ async function main() {
     const prismaInsertPostData = seed_json.map((seed,i) => {
         return {
             id: i + 1,
-            title: seed.title
+            title: seed.title,
+            createdAt: new Date(seed.create_at),
+            updatedAt: new Date(seed.update_at)
         }
     })
     // @ts-ignore

@@ -12,10 +12,26 @@ yarn install
 # npm
 npm install
 
-# pnpm
-pnpm install --shamefully-hoist
+```
+
+next:
 
 ```
+
+# yarn
+yarn build
+
+# npm
+npm run build
+
+```
+
+next: 
+
+[originApp](https://image-list-bussy-site.herokuapp.com/)
+herokuでのデプロイですので、一度こちらにアクセスしといてください。
+
+※[dyno のスリープ](https://devcenter.heroku.com/ja/articles/free-dyno-hours#dyno-sleeping)
 
 ## データベース起動
 
@@ -32,11 +48,17 @@ pnpm install --shamefully-hoist
 docker-compose up　-d
 ```
 
-## prismaのallinoneコード
+## prismaの初期立ち上げallinoneコード
 
 ```
-yarn prisma:mps   (削除する場合y/nと聞かれますが、基本
-yで大丈夫です)
+yarn prisma:start
+```
+
+
+## prisma seed再読み込み
+
+```
+yarn prisma:seed
 ```
 
 ## ローカルアプリ起動
@@ -96,7 +118,7 @@ buildした時点のローカルの状態と、現在のローカルの時点で
 bench.js
 ```
 //  const ORIGIN_APP_HOST = 'image-list-busy-site.herokuapp.com';
-const ORIGIN_APP_HOST = 'localhost:8888';
+const ORIGIN_APP_HOST = 'localhost:3000';
 
 ```
 
