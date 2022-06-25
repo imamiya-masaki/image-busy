@@ -8,7 +8,7 @@
     "preview": "npx nuxt preview",
     "analyze": "npx nuxi analyze",
     "start": "node .output/server/index.mjs",
-    "heroku-postbuild": "npm run build",
+    "heroku-postbuild": "node_modules/nuxt3/bin/nuxt.mjs build",
     "prisma:migragte": "npx prisma migrate reset && npx prisma migrate dev",
     "prisma:push": "npx prisma db push",
     "prisma:seed": "npx prisma migrate reset",
@@ -24,6 +24,7 @@
     "chrome-launcher": "^0.15.1",
     "lighthouse": "^9.6.2",
     "nuxt": "3.0.0-rc.3",
+    "nuxt3": "^3.0.0-rc.4-27600153.ad42023",
     "playwright": "^1.22.2",
     "playwright-lighthouse": "^2.2.2",
     "postcss-flexbugs-fixes": "^5.0.2",
@@ -48,7 +49,7 @@
   },
   "engines": {
     "node": "16.14.x",
-    "npm" : "8.10.x"
+    "npm": "8.10.x"
   },
   "type": "module"
 }
