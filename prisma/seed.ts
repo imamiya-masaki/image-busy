@@ -31,34 +31,6 @@ async function main() {
     }
      // @ts-ignore
     promises.push(prisma.image.createMany({data: prismaInsertImageData}))
-      /*
-      model Image {
-        postId Int
-        id     Int
-        uri  String
-        Post Post? @relation(fields: [postId], references: [id])
-        @@id([postId, id])
-      }
-      */
-      
-    // @ts-ignore
-    // for (const seed of seed_json) {
-    //     promises.push(
-    //         prisma.post.create({
-    //           data: {
-    //             title: seed.title,
-    //             image: { 
-    //               create: seed.images.map((s,i) => {
-    //                 return {
-    //                   id: i,
-    //                   uri: s
-    //                 }
-    //               })
-    //             }
-    //           }
-    //         })
-    //     )
-    // } 
     return Promise.all(promises)
         .then(res => {
             console.log("inserted", res.length);
