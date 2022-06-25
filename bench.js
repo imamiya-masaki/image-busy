@@ -11,10 +11,11 @@ const browser = await playwright['chromium'].launch();
 const context = await browser.newContext();
 
 async function main() {
-  const diffRoutes = ['', '1243'];
+  const diffRoutes = ['', '244', '1' , '100'];
   console.log('diff check:');
   for (const diffString of diffRoutes) {
     const flag = await diff(diffString);
+    console.log(`/${diffString} is ok`);
     if (!flag) {
       console.log('差分があります:route', diffString);
       await exit();
@@ -25,7 +26,7 @@ async function main() {
   console.log('start');
   const target = LOCAL_HOST;
   let resultScore = 0;
-  for (const route of ['', '1243', '1']) {
+  for (const route of ['', '244', '1', '100']) {
     resultScore += await lightHouse(`http://${target}/${route}`)
   }
   console.log('...');
@@ -42,17 +43,17 @@ async function main() {
 
 async function diff(route) {
   return Promise.all([screenShot(`screenshots/newer${route}.png`, `http://${LOCAL_HOST}/${route}`, 'chromium'), screenShot(`screenshots/older${route}.png`, `http://${ORIGIN_APP_HOST}/${route}`, 'chromium')]).then(res => {
-    return resemble(`screenshots/newer${route}.png`)
+    let flag = true;
+    resemble(`screenshots/newer${route}.png`)
     .compareTo(`screenshots/older${route}.png`)
     .ignoreColors()
     .onComplete((data) => { 
-      let flag = true;
       if (data.misMatchPercentage > 0.01) {
         flag = false;
       }
       fs.writeFileSync(`screenshots/screenshot${route}.diff.png`, data.getBuffer());
-      return flag;
     })
+    return flag;
   })
 }
 
