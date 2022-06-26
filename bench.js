@@ -15,11 +15,11 @@ async function main() {
   console.log('diff check:');
   for (const diffString of diffRoutes) {
     const flag = await diff(diffString);
-    console.log(`/${diffString} is ok`);
     if (!flag) {
       console.log('差分があります:route', diffString);
       await exit();
     }
+    console.log(`/${diffString} is ok`);
   }
   console.log('差分はありませんでした');
   console.log('audit check');
