@@ -35,3 +35,9 @@ code.1839406.jpg
 audience-1866738.jpg
 archive-1850170.jpg
 arm-1284248.jpg
+
+# License
+
+Simplified Pixabay License
+
+https://pixabay.com/ja/service/license/
