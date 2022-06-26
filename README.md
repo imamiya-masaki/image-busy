@@ -1,4 +1,4 @@
-# image-list-tuningーapp
+# image-busy( for tuning app )
 
 ## Setup
 
@@ -43,7 +43,8 @@ echo DATABASE_URL=\"postgresql://postgres:password@localhost:5432/postgres?schem
 
 ## データベース起動
 
-
+[mac docker install](https://docs.docker.com/desktop/mac/install/)
+[windows docker install](https://docs.docker.com/desktop/windows/install/)
 ```
  docker-compose up db 
  // or
