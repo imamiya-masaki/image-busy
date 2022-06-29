@@ -37,7 +37,7 @@ next:
 
 ```
 touch .env
-echo DATABASE_URL=\"postgresql://postgres:password@localhost:5432/postgres?schema=public\" >> .env
+echo "DATABASE_URL=postgresql://postgres:password@localhost:5432/postgres?schema=public" >> .env
 
 ```
 
