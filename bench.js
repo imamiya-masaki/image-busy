@@ -5,7 +5,7 @@ import chromeLauncher from 'chrome-launcher';
 import fs from 'fs';
 import { exit } from 'process';
 const ORIGIN_APP_HOST = 'image-list-busy-site.herokuapp.com';
-// const ORIGIN_APP_HOST = 'localhost:8888';
+// const ORIGIN_APP_HOST = 'localhost:3000';
 const LOCAL_HOST = 'localhost:8080';
 const browser = await playwright['chromium'].launch();
 const context = await browser.newContext();
