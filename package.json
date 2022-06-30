@@ -14,7 +14,7 @@
     "prisma:push": "npx prisma db push",
     "prisma:seed": "yes | npx prisma migrate reset",
     "prisma:init": "npx prisma init",
-    "prisma:start": "npx prisma generate && npx prisma db push && yes | npx prisma migrate reset"
+    "prisma:start": "npx prisma generate && npx prisma db push && yes | npx prisma migrate  dev --name init"
   },
   "devDependencies": {
     "@babel/core": "^7.18.2",
