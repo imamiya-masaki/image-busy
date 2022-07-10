@@ -48,7 +48,7 @@ async function diff(route) {
     .compareTo(`screenshots/older${route}.png`)
     .ignoreColors()
     .onComplete((data) => { 
-      if (data.misMatchPercentage > 0.01) {
+      if (data.misMatchPercentage > 0.10) {
         flag = false;
       }
       fs.writeFileSync(`screenshots/screenshot${route}.diff.png`, data.getBuffer());
