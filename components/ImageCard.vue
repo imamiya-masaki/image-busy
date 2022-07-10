@@ -29,7 +29,7 @@ const displayText = () => {
 </script>
 
 <template>
-  <div class="card" style="height: 20rem; width: 20rem;" v-on:mouseover="mouseover" v-on:mouseout="mouseout" :class="{'overed': overed}" @click="goto">
+  <div class="card" style="height: 320px; width: 320px;" v-on:mouseover="mouseover" v-on:mouseout="mouseout" :class="{'overed': overed}" @click="goto">
     <b-button class="images-count__right" variant="primary" v-if="type==='root'">画像数: <b-badge variant="light">{{images.length}}</b-badge>
     </b-button>
     <img class="card-img-top img-size" alt="..." :src="`/images/${images?.[0] || ''}`" loading="eager" v-on:load="() => emit('loaded', postId)">
