@@ -29,49 +29,34 @@ export default {
     };
   },
   methods: {
-    load: function (path: string, type: Type) {
-      useFetch<Post[]>(path)
-        .then((res) => {
-          const { data: posts } = res;
-          const promises = posts.value.map((p) =>
-            useFetch<string[]>(`/api/post/image?postId=${p.id}`)
-          );
-          this.posts = posts;
-          return Promise.all(promises).then((res2) => {
-            for (const [i, { data: val }] of res2.entries()) {
-              switch (type) {
-                case "detail":
-                  const PostInfo = { ...(this?.posts?.[0] || {}) };
-                  const posts = [];
-                  for (const [j, uri] of val.value.entries()) {
-                    const addPost: ImagePost = {
-                      id: j + 1,
-                      createdAt: new Date(),
-                      updatedAt: new Date(),
-                      title: PostInfo.title,
-                      images: [uri],
-                    };
-                    posts.push(addPost);
-                    this.posts = posts;
-                  }
-                  break;
-                case "root":
-                  this.posts[i].images = val;
-                  break;
-              }
+    load: async function (path: string, type: Type) {
+      this.posts = await useFetch<ImagePost[]>(path, {transform:  (res) => {
+        switch(type) {
+          case "detail":
+            const p = res[0];
+            return p.images.map((image,i) => {
+              return {
+              id: i + 1,
+              createdAt: new Date(),
+              updatedAt: new Date(),
+              title: p.title,
+              images: [p.images[i]],
             }
-            this.tablePosts = [[..._.cloneDeep(this.posts)]];
-            this.loadPosted = [];
-            this.inspected = false;
-            return nextTick(() => {
-              this.inspectRow();
-              this.visibleOpacity();
             });
-          });
-        })
-        .catch((err: Error) => {
-          return err;
-        });
+          case "root":
+            return res
+        }
+      }}
+      ).then(res => {
+        return res.data.value;
+      })
+      this.tablePosts = [_.cloneDeep(this.posts)];
+      this.loadPosted = [];
+      this.inspected = false;
+      return nextTick(() => {
+        this.inspectRow();
+        this.visibleOpacity();
+      });
     },
     getTitle: function (): string {
       return this.loadedData.title || "";
@@ -84,7 +69,7 @@ export default {
       )
         ? this.$refs.table.firstChild.nextElementSibling
         : undefined;
-      const children: Element[] = convertHTMLCollectionToElements(exampleRow.children)
+      const children: Element[] = convertHTMLCollectionToElements(exampleRow.children);
       if (!children) {
         return;
       }
