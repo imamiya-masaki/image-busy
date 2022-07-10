@@ -4,7 +4,7 @@ import { useBody, useCookies, useQuery } from 'h3'
 
 export default (req) => {
 const id = useQuery(req).id;
-const imgType = ".jpg"
+const imgType = ".webp"
 const findManyOption: {orderBy?: [{[key: string]: string}], where?: {[key: string]: number}, include?: {[key: string]: boolean} } = {
   orderBy:[{
     updatedAt: 'desc'

@@ -4,7 +4,7 @@ import { useQuery } from 'h3'
 
 
 export default (req) => {
-    const imgType = ".jpg"
+    const imgType = ".webp"
     const postId = useQuery(req).postId;
     return prismaClient.image.findMany({
         where: {
